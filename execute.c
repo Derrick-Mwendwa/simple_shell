@@ -1,7 +1,5 @@
 #include "main.h"
 
-extern alias *aliases;
-
 int execute(string *args, string *f);
 
 /**

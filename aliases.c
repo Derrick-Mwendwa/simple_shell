@@ -1,8 +1,6 @@
 #include "main.h"
 
-extern alias *aliases;
-
-void set_alias(string name, string val);
+void set_alias(string v_name, string val);
 void print(alias *x);
 
 /**
@@ -14,11 +12,10 @@ void print(alias *x);
  */
 int _alias(string *args, char __attribute__((__unused__)) **f)
 {
+	alias *t = aliases;
 	int i, r_value;
 	string value;
-	alias *t;
 
-	t = aliases;
 	r_value = 0;
 
 	if (!args[0])
@@ -62,12 +59,12 @@ int _alias(string *args, char __attribute__((__unused__)) **f)
 
 /**
  * set_alias - sets an alias
- * @name: name of the alias
+ * @v_name: name of the alias
  * @val: value of the alias
  *
  * Return: void
  */
-void set_alias(string name, string val)
+void set_alias(string v_name, string val)
 {
 	int i, j, len;
 	string n_val;
@@ -93,7 +90,7 @@ void set_alias(string name, string val)
 
 	while (t)
 	{
-		if (_strcmp(name, t->name) == 0)
+		if (_strcmp(v_name, t->name) == 0)
 		{
 			free(t->val);
 			t->val = n_val;
@@ -103,7 +100,7 @@ void set_alias(string name, string val)
 	}
 
 	if (!t)
-		add_alias_e(&aliases, name, n_val);
+		add_alias_e(&aliases, v_name, n_val);
 }
 
 /**

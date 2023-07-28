@@ -1,8 +1,5 @@
 #include "main.h"
 
-extern string name;
-extern int hist;
-
 /**
  * err_1 - error message for shellby_alias errors
  * @args: arguments passed to the command
@@ -14,7 +11,7 @@ string err_1(string *args)
 	int len;
 	string err;
 
-	len = _strlen(name) + _strlen(args[0]) + 13;
+	len = _strlen(p_name) + _strlen(args[0]) + 13;
 	err = malloc((len + 1) * sizeof(char));
 
 	if (!err)
@@ -45,7 +42,7 @@ string err_env(string *args)
 
 	--args;
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 45;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 45;
 	err = malloc((len + 1) * sizeof(char));
 
 	if (!err)
@@ -54,7 +51,7 @@ string err_env(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": ");
@@ -82,7 +79,7 @@ string err_2_exit(string *args)
 	if (!hist_s)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 27;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 27;
 	err = malloc((len + 1) * sizeof(char));
 	if (!err)
 	{
@@ -90,7 +87,7 @@ string err_2_exit(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": exit: Illegal number: ");
@@ -120,7 +117,7 @@ string err_2_cd(string *args)
 
 	if (args[0][0] == '-')
 		args[0][2] = '\0';
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 24;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 24;
 	err = malloc((len + 1) * sizeof(char));
 	if (!err)
 	{
@@ -128,7 +125,7 @@ string err_2_cd(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	if (args[0][0] == '-')
@@ -159,7 +156,7 @@ string err_2_syntax(string *args)
 	if (!hist_s)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 33;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 33;
 	err = malloc((len + 1) * sizeof(char));
 	if (!err)
 	{
@@ -167,7 +164,7 @@ string err_2_syntax(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": Syntax error: \"");

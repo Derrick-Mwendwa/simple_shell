@@ -1,8 +1,5 @@
 #include "main.h"
 
-extern string name;
-extern int hist;
-
 /**
  * err_126 - error message for shellby_access errors
  * @args: arguments passed to the command
@@ -19,7 +16,7 @@ string err_126(string *args)
 	if (!hist_s)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 24;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 24;
 	err = malloc((len + 1) * sizeof(char));
 	if (!err)
 	{
@@ -27,7 +24,7 @@ string err_126(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": ");
@@ -55,7 +52,7 @@ string err_127(string *args)
 	if (!hist_s)
 		return (NULL);
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(args[0]) + 16;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(args[0]) + 16;
 	err = malloc((len + 1) * sizeof(char));
 	if (!err)
 	{
@@ -63,7 +60,7 @@ string err_127(string *args)
 		return (NULL);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": ");

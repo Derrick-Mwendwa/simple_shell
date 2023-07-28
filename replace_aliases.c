@@ -1,7 +1,5 @@
 #include "main.h"
 
-extern alias *aliases;
-
 /**
  * replace_aliases - replaces aliases with their values
  * @args: pointer to array of arguments

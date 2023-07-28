@@ -17,7 +17,7 @@
 typedef char *string;
 
 extern string *environ;
-extern string name;
+extern string p_name;
 extern int hist;
 
 /**
@@ -116,7 +116,7 @@ string err_2_syntax(string *args);
 string err_2_cd(string *args);
 string err_126(string *args);
 string err_127(string *args);
-alias *add_alias_e(alias **head, string name, string value);
+alias *add_alias_e(alias **head, string s_name, string value);
 list_t *add_node_e(list_t **head, string dir);
 void free_list(list_t *head);
 

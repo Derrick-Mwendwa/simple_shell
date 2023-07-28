@@ -3,9 +3,9 @@
 void sig_handler(int sig);
 int execute(string *args, string *front);
 
-string name;
-int hist;
 alias *aliases;
+string p_name;
+int hist;
 
 /**
  * main - simple shell
@@ -21,7 +21,7 @@ int main(int argc, string argv[])
 	string pmt = "$ ", new_line = "\n";
 
 	r_value = 0;
-	name = argv[0];
+	p_name = argv[0];
 	hist = 1;
 	aliases = NULL;
 	signal(SIGINT, sig_handler);

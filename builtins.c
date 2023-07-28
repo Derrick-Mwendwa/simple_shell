@@ -1,8 +1,5 @@
 #include "main.h"
 
-extern string name;
-extern alias *aliases;
-
 int s_exit(string *args, string *f);
 int _cd(string *args, char __attribute__((__unused__)) **f);
 int _help(string *args, char __attribute__((__unused__)) **f);
@@ -198,7 +195,7 @@ int _help(string *args, char __attribute__((__unused__)) **f)
 	else if (_strcmp(args[0], "help") == 0)
 		h_help();
 	else
-		write(STDERR_FILENO, name, _strlen(name));
+		write(STDERR_FILENO, p_name, _strlen(p_name));
 
 	return (0);
 }

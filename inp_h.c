@@ -1,7 +1,5 @@
 #include "main.h"
 
-extern int hist;
-
 int run_args(string *args, string *front, int *exe_ret);
 int check_args(string *args);
 

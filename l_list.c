@@ -3,12 +3,12 @@
 /**
  * add_alias_e - adds a new node at the end of a list_t list
  * @head: pointer to the head of the list_t list
- * @name: name of the new alias to be added
+ * @s_name: name of the new alias to be added
  * @val: value of the new alias to be added
  *
  * Return: pointer to the new node or NULL if it failed
  */
-alias *add_alias_e(alias **head, string name, string val)
+alias *add_alias_e(alias **head, string s_name, string val)
 {
 	alias *n_node = malloc(sizeof(alias));
 	alias *last;
@@ -17,14 +17,14 @@ alias *add_alias_e(alias **head, string name, string val)
 		return (NULL);
 
 	n_node->next = NULL;
-	n_node->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	n_node->name = malloc(sizeof(char) * (_strlen(s_name) + 1));
 	if (!n_node->name)
 	{
 		free(n_node);
 		return (NULL);
 	}
 	n_node->val = val;
-	_strcpy(n_node->name, name);
+	_strcpy(n_node->name, s_name);
 
 	if (*head)
 	{

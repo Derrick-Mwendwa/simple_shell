@@ -1,8 +1,5 @@
 #include "main.h"
 
-extern string name;
-extern int hist;
-
 int pfile_cmds(string file_path, int *exe_ret);
 
 /**
@@ -20,7 +17,7 @@ int fail_to_open(string fl_path)
 	if (!hist_s)
 		return (127);
 
-	len = _strlen(name) + _strlen(hist_s) + _strlen(fl_path) + 16;
+	len = _strlen(p_name) + _strlen(hist_s) + _strlen(fl_path) + 16;
 	err = malloc(sizeof(char) * (len + 1));
 	if (!err)
 	{
@@ -28,7 +25,7 @@ int fail_to_open(string fl_path)
 		return (127);
 	}
 
-	_strcpy(err, name);
+	_strcpy(err, p_name);
 	_strcat(err, ": ");
 	_strcat(err, hist_s);
 	_strcat(err, ": Can't open ");
