@@ -1,11 +1,11 @@
 #include "main.h"
 
+void sig_handler(int sig);
+int execute(string *args, string *front);
+
 string name;
 int hist;
 alias *aliases;
-
-void sig_handler(int sig);
-int execute(string *args, string *front);
 
 /**
  * main - simple shell
